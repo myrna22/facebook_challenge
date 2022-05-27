@@ -1,0 +1,22 @@
+<%- include('./components/header') %>
+
+<form method="POST" action="/add/feed">
+    <button type="submit" class="btn btn-primary btn-sm">Add a Post</button>
+    <div class="form-group">
+      <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+      <% if (errors) { %>
+        <small id="err" class="form-text text-muted">
+        <%= errors.name %> </small>
+      <% } %>
+      <div class="form-group">
+      <input type="text" name="message" class="form-control" id="exampleInputPassword1" placeholder="Message">
+      <% if (errors) { %>
+        <small id="err" class="form-text text-muted">
+        <%= errors.message %> </small>
+      <% } %>
+    </div>
+  </form>
+
+
+
+<%- include('./components/footer') %>

@@ -1,0 +1,25 @@
+<%- include('./components/header') %>
+
+<form method="POST" action="/feed/edit/<%=result._id%>">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" name="name" placeholder="title" class="title" value="<%= result.name %>" 
+        id="exampleInputEmail1" aria-describedby="emailHelp">
+        <% if (errors) { %>
+            <small id="err" class="form-text text-muted">
+                <%= errors.name %> </small>
+        <% } %>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Message</label>
+        <input type="text" name="message" class="message" value="<%= result.message %>" 
+        id="exampleInputPassword1" placeholder="message">
+        <% if (errors) { %>
+            <small id="err" class="form-text text-muted">
+            <%= errors.message %> </small>
+        <% } %>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">edit</button>
+</form>
+<%- include('./components/footer') %>
